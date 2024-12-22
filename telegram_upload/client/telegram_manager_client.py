@@ -3,7 +3,6 @@ import json
 import os
 import re
 import sys
-from distutils.version import StrictVersion
 from typing import Union
 from urllib.parse import urlparse
 
@@ -18,7 +17,7 @@ from telegram_upload.client.telegram_upload_client import TelegramUploadClient
 from telegram_upload.config import SESSION_FILE
 from telegram_upload.exceptions import TelegramProxyError, InvalidApiFileError
 
-if StrictVersion(telethon_version) >= StrictVersion('1.0'):
+if int(telethon_version[0]) >= 1:
     import telethon.sync  # noqa
 
 
